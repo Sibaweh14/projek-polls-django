@@ -16,8 +16,7 @@ def detail(request, question_id):
 		question = Question.objects.get(id=question_id)
 	except Question.DoesNotExist:
 		raise Http404('Question doesnt exist')
-	salam = "<p>hello</p>"
-	return render(request, 'polls/detail.html', {'question':question, 'salam': salam})
+	return render(request, 'polls/detail.html', {'question':question})
 
 
 def result(request, question_id):
